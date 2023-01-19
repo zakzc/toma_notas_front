@@ -1,11 +1,10 @@
 import React from "react";
+import "../Styles/EntryPageStyle.css";
 
 export default function EntryPage(): JSX.Element {
   return (
-    <>
-      <header className="App-header">
-        <h1>Router comes here</h1>
-      </header>
-    </>
+    <div className="entryPageStyle">
+      <h1>This is the entry page</h1>
+    </div>
   );
 }
