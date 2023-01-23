@@ -1,9 +1,11 @@
 .entryPageStyle {
     margin: 0;
-    padding: 0;
+    padding: 10px;
     border: 0;
     height: 100%;
     width: 100%;
     position: absolute;
     background-color: whitesmoke;
+    display: grid;
+    grid-template-columns: auto auto auto;
 }
