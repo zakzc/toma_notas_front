@@ -1,13 +1,20 @@
 .entryPageStyle {
     margin: 0;
-    padding: 10px;
+    padding: 0;
     border: 0;
     height: 100%;
     width: 100%;
     position: absolute;
     background-color: whitesmoke;
-    display: grid;
-    grid-template-columns: auto auto auto;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    @media (max-width: 800px) {
+            .flex-item-right,
+            .flex-item-left {
+                flex: 100%;
+            }
+        }
 }
 button {
     background: none;

@@ -1,5 +1,8 @@
 import React, { useState } from "react";
-import "../Styles/EntryPageStyle.css";
+import "../Styles/entryPageStyle.css";
+import "../Styles/rightPanelStyle.css";
+import "../Styles/leftPanelStyle.css";
+import "../Styles/textAreaStyle.css";
 import ArrowBack from "@mui/icons-material/ArrowBack";
 import ArrowForward from "@mui/icons-material/ArrowForward";
 import TextArea from "./TextArea";
@@ -11,15 +14,17 @@ export default function SidePanel(): JSX.Element {
   const [isOpenRight, setIsOpenRight] = useState(false);
   return (
     <div className="entryPageStyle">
-      <div>
+      <div className="leftPanelStyle">
         <button onClick={() => setIsOpenLeft(!isOpenLeft)}>
           {/* <svg data-testid="ArrowBack"></svg> */}
           <ArrowBack />
         </button>
         {isOpenLeft && <LeftPanel />}
       </div>
-      <TextArea />
-      <div>
+      <div className="textAreaStyle">
+        <TextArea />
+      </div>
+      <div className="rightPanelStyle">
         <button onClick={() => setIsOpenRight(!isOpenRight)}>
           <ArrowForward />
         </button>
