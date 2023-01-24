@@ -1,10 +1,22 @@
 import React from "react";
-import "../Styles/LogInPageStyle.css";
+import "../Styles/rightPanelStyle.css";
 
 export default function RightPanel(): JSX.Element {
+  const myViewingOptions = [
+    "Simple View",
+    "Numbered",
+    "Levels",
+    "Cornel",
+    "Flashcards",
+  ];
   return (
-    <div>
-      <h1>This is the Right panel</h1>
+    <div className="rightPanelStyle">
+      <h1>How do you want to see your Notes?</h1>
+      <ul>
+        {myViewingOptions.map((v, i) => (
+          <li key={i}>{v}</li>
+        ))}
+      </ul>
     </div>
   );
 }

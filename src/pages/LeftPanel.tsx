@@ -1,5 +1,5 @@
 import React from "react";
-import "../Styles/LogInPageStyle.css";
+import "../Styles/leftPanelStyle.css";
 
 interface myNotesInterface {
   noteName: string;
@@ -15,11 +15,13 @@ export default function LeftPanel(): JSX.Element {
   ];
 
   return (
-    <div>
+    <div className="leftPanelStyle">
       <h1>Your notes</h1>
-      {myNotes.map((n) => (
-        <li key={n.noteNumber}>{n.noteName}</li>
-      ))}
+      <ul>
+        {myNotes.map((n) => (
+          <li key={n.noteNumber}>{n.noteName}</li>
+        ))}
+      </ul>
     </div>
   );
 }
