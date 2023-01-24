@@ -6,7 +6,8 @@ export default function TextArea(): JSX.Element {
   console.log("-> ", inputText);
   return (
     <div>
-      <h1>Input text for your note : </h1>
+      <h1> Write - Visualize </h1>
+      <h2>Input text for your note : </h2>
       <br />
       <textarea
         name="Text Input"
