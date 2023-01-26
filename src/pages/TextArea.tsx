@@ -1,16 +1,20 @@
 import React, { useState } from "react";
+import { useTranslation } from "react-i18next";
+
 import "../Styles/LogInPageStyle.css";
 
 export default function TextArea(): JSX.Element {
   const [inputText, setInputText] = useState("");
-  console.log("-> ", inputText);
+  const { t } = useTranslation();
+  console.log("Input: ", inputText);
+
   return (
     <div>
-      <h2>Input text for your note : </h2>
+      <h2>{t("inputText")}</h2>
       <br />
       <textarea
         name="Text Input"
-        rows={40}
+        rows={50}
         cols={80}
         placeholder="enter your note"
         onChange={(e) => setInputText(e.target.value)}
