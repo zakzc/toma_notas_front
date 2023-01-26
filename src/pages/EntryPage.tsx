@@ -62,13 +62,13 @@ export default function EntryPage(): JSX.Element {
 
   return (
     <div className="entryPageStyle">
-      <LeftPanelView />
+      {appMode === 1 ? <LeftPanelView /> : <></>}
       <div className="textAreaStyle">
         <WriteViewPanel />
         {appMode === 0 ? <TextArea /> : <Visualise />}
         <ChangeLanguageSwitch />
       </div>
-      <RightPanelView />
+      {appMode === 1 ? <RightPanelView /> : <></>}
     </div>
   );
 }

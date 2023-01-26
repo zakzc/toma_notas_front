@@ -1,4 +1,6 @@
 import React from "react";
+import { useTranslation } from "react-i18next";
+
 import "../Styles/leftPanelStyle.css";
 
 interface myNotesInterface {
@@ -7,6 +9,7 @@ interface myNotesInterface {
 }
 
 export default function LeftPanel(): JSX.Element {
+  const { t } = useTranslation();
   // dummy value, actual values will come from DB
   const myNotes: myNotesInterface[] = [
     { noteName: "note 1", noteNumber: 12343 },
@@ -16,7 +19,7 @@ export default function LeftPanel(): JSX.Element {
 
   return (
     <div className="leftPanelStyle">
-      <h1>Your notes</h1>
+      <h1>{t("yourNotes")}</h1>
       <ul>
         {myNotes.map((n) => (
           <li key={n.noteNumber}>{n.noteName}</li>

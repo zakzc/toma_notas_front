@@ -9,6 +9,15 @@ const resources = {
       view: "View notes",
       visualise: "Visualise your notes",
       inputText: "Input text for your note",
+      yourNotes: "Your notes: ",
+      viewNotes: "How do you want to visualise your notes?",
+      viewOptions: [
+        "Simple View",
+        "Numbered",
+        "Levels",
+        "Cornel",
+        "Flashcards",
+      ],
     },
   },
   pt: {
@@ -17,6 +26,9 @@ const resources = {
       view: "Visualise as notas",
       visualise: "Visualise suas notas",
       inputText: "Adicione texto à sua nota",
+      yourNotes: "Suas notas",
+      viewNotes: "Como você quer visualisar as suas notas?",
+      viewOptions: ["Simples", "Numerada", "Em níveis", "Cornel", "Cartões"],
     },
   },
 };

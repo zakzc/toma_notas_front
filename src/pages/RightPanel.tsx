@@ -1,7 +1,10 @@
 import React from "react";
+import { useTranslation } from "react-i18next";
+
 import "../Styles/rightPanelStyle.css";
 
 export default function RightPanel(): JSX.Element {
+  const { t } = useTranslation();
   const myViewingOptions = [
     "Simple View",
     "Numbered",
@@ -11,7 +14,7 @@ export default function RightPanel(): JSX.Element {
   ];
   return (
     <div className="rightPanelStyle">
-      <h1>How do you want to see your Notes?</h1>
+      <h1>{t("view")}</h1>
       <ul>
         {myViewingOptions.map((v, i) => (
           <li key={i}>{v}</li>

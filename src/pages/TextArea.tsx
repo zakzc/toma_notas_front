@@ -16,7 +16,6 @@ export default function TextArea(): JSX.Element {
         name="Text Input"
         rows={50}
         cols={80}
-        placeholder="enter your note"
         onChange={(e) => setInputText(e.target.value)}
       />
     </div>
