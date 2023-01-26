@@ -1,8 +1,10 @@
 import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+
 import EntryPage from "./pages/EntryPage";
 import LogInPage from "./pages/LogInPage";
 import NoPageFound from "./pages/NoPageFound";
+
 import "./App.css";
 
 function App(): JSX.Element {

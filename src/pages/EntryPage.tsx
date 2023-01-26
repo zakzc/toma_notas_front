@@ -18,7 +18,7 @@ export default function EntryPage(): JSX.Element {
   const [isOpenRight, setIsOpenRight] = useState(false);
   // 0 for Write Mode, 1 for visualise mode
   const [appMode, setAppMode] = useState(0);
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
 
   const LeftPanelView = () => (
     <div className="leftPanelStyle">
@@ -38,6 +38,10 @@ export default function EntryPage(): JSX.Element {
     </div>
   );
 
+  const changeLanguage = (lng: string) => {
+    i18n.changeLanguage(lng);
+  };
+
   const WriteViewPanel = () => (
     <>
       {appMode === 0 ? (
@@ -50,8 +54,9 @@ export default function EntryPage(): JSX.Element {
 
   const ChangeLanguageSwitch = () => (
     <>
-      {" "}
-      <button onClick={() => setAppMode(0)}>{t("write")}</button>
+      <button onClick={() => changeLanguage("en")}> EN </button>
+      <span> - </span>
+      <button onClick={() => changeLanguage("pt")}> PT </button>
     </>
   );
 
