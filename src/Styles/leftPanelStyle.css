@@ -1,4 +1,6 @@
 .leftPanelStyle {
     flex: 10%;
     padding: '10px';
+    margin-right: 25%;
+    /* background-color: cornflowerblue; */
 }

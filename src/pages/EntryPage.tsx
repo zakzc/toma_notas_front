@@ -23,7 +23,13 @@ export default function EntryPage(): JSX.Element {
   const LeftPanelView = () => (
     <div className="leftPanelStyle">
       <button onClick={() => setIsOpenLeft(!isOpenLeft)}>
-        {appMode === 1 ? <ArrowBack /> : <></>}
+        {appMode === 1 ? (
+          <div id="arrowLeftPosition">
+            <ArrowBack style={{ height: "50px", width: "50px" }} />
+          </div>
+        ) : (
+          <></>
+        )}
       </button>
       {isOpenLeft && <LeftPanel />}
     </div>
@@ -32,7 +38,13 @@ export default function EntryPage(): JSX.Element {
   const RightPanelView = () => (
     <div className="rightPanelStyle">
       <button onClick={() => setIsOpenRight(!isOpenRight)}>
-        {appMode === 1 ? <ArrowForward /> : <></>}
+        {appMode === 1 ? (
+          <div id="arrowRightPosition">
+            <ArrowForward style={{ height: "50px", width: "50px" }} />
+          </div>
+        ) : (
+          <></>
+        )}
       </button>
       {isOpenRight && <RightPanel />}
     </div>

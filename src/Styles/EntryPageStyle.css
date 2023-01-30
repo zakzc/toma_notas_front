@@ -32,3 +32,19 @@ ul {
     font-size: "10px";
     line-height: 2em;
 }
+
+.textAreaStyle{ 
+    position: absolute;
+    left: 50%;
+    }
+
+#arrowRightPosition {
+    /* background-color: blue; */
+    padding-left: 40%;
+}
+
+#arrowLeftPosition {
+    /* background-color: red; */
+}
+
+/* color backgroung only for positioning */
