@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 
 import "../Styles/leftPanelStyle.css";
@@ -24,6 +25,11 @@ export default function LeftPanel(): JSX.Element {
         {myNotes.map((n) => (
           <li key={n.noteNumber}>{n.noteName}</li>
         ))}
+      </ul>
+      <ul>
+        <li>
+          <Link to={`/login`}>Log in</Link>
+        </li>
       </ul>
     </div>
   );
