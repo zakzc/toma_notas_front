@@ -5,7 +5,7 @@ import LanguageDetector from "i18next-browser-languagedetector";
 const resources = {
   en: {
     translation: {
-      write: "Write",
+      write: "Write note",
       view: "View notes",
       visualise: "Visualise your notes",
       inputText: "Input text for your note",
@@ -20,8 +20,8 @@ const resources = {
   },
   pt: {
     translation: {
-      write: "Escreva",
-      view: "Visualise as notas",
+      write: "Escreva nota",
+      view: "Visualise notas",
       visualise: "Visualise suas notas",
       inputText: "Adicione texto à sua nota",
       yourNotes: "Suas notas",

@@ -6,15 +6,7 @@
     width: 100%;
     position: absolute;
     background-color: whitesmoke;
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
-    @media (max-width: 800px) {
-            .flex-item-right,
-            .flex-item-left {
-                flex: 100%;
-            }
-        }
+
 }
 button {
     background: none;

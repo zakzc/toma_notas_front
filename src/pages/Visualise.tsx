@@ -9,6 +9,7 @@ export default function Visualise(): JSX.Element {
   return (
     <div>
       <h1>{t("visualise")}</h1>
+      <p> No notes to view currently </p>
     </div>
   );
 }

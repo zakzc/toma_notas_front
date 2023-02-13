@@ -5,6 +5,9 @@ import "../Styles/entryPageStyle.css";
 import "../Styles/rightPanelStyle.css";
 import "../Styles/leftPanelStyle.css";
 import "../Styles/textAreaStyle.css";
+import "../Styles/textWriteStyle.css";
+import "../Styles/centerPageStyle.css";
+import "../Styles/viewNotesStyle.css";
 
 import ArrowBack from "@mui/icons-material/ArrowBack";
 import ArrowForward from "@mui/icons-material/ArrowForward";
@@ -21,66 +24,90 @@ export default function EntryPage(): JSX.Element {
   const { t, i18n } = useTranslation();
 
   const LeftPanelView = () => (
-    <div className="leftPanelStyle">
+    <>
       <button onClick={() => setIsOpenLeft(!isOpenLeft)}>
         {appMode === 1 ? (
           <div id="arrowLeftPosition">
-            <ArrowBack style={{ height: "50px", width: "50px" }} />
+            {isOpenLeft ? (
+              <ArrowBack style={{ height: "50px", width: "50px" }} />
+            ) : (
+              <ArrowForward style={{ height: "50px", width: "50px" }} />
+            )}
           </div>
         ) : (
           <></>
         )}
       </button>
       {isOpenLeft && <LeftPanel />}
-    </div>
+    </>
   );
 
   const RightPanelView = () => (
-    <div className="rightPanelStyle">
+    <>
       <button onClick={() => setIsOpenRight(!isOpenRight)}>
         {appMode === 1 ? (
           <div id="arrowRightPosition">
-            <ArrowForward style={{ height: "50px", width: "50px" }} />
+            {isOpenRight ? (
+              <ArrowForward style={{ height: "50px", width: "50px" }} />
+            ) : (
+              <ArrowBack style={{ height: "50px", width: "50px" }} />
+            )}
           </div>
         ) : (
           <></>
         )}
       </button>
       {isOpenRight && <RightPanel />}
-    </div>
+    </>
   );
 
   const changeLanguage = (lng: string) => {
     i18n.changeLanguage(lng);
   };
 
-  const WriteViewPanel = () => (
-    <>
+  const WriteViewSwitch = () => (
+    <div className="centerPageStyle">
       {appMode === 0 ? (
         <button onClick={() => setAppMode(1)}>{t("view")}</button>
       ) : (
         <button onClick={() => setAppMode(0)}>{t("write")}</button>
       )}
-    </>
+    </div>
   );
 
   const ChangeLanguageSwitch = () => (
-    <>
+    <div className="centerPageStyle">
       <button onClick={() => changeLanguage("en")}> EN </button>
       <span> - </span>
       <button onClick={() => changeLanguage("pt")}> PT </button>
-    </>
+    </div>
+  );
+
+  const ViewNotesMode = () => (
+    <div className="viewNotesStyle">
+      <div style={{ display: "table-cell" }}>
+        {appMode === 1 ? <LeftPanelView /> : <></>}
+      </div>
+      <div style={{ display: "table-cell" }}>
+        <Visualise />
+      </div>
+      <div style={{ display: "table-cell" }}>
+        {appMode === 1 ? <RightPanelView /> : <></>}
+      </div>
+    </div>
+  );
+
+  const WriteTextMode = () => (
+    <div className="textWriteStyle">
+      <TextArea />
+    </div>
   );
 
   return (
     <div className="entryPageStyle">
-      {appMode === 1 ? <LeftPanelView /> : <></>}
-      <div className="textAreaStyle">
-        <WriteViewPanel />
-        {appMode === 0 ? <TextArea /> : <Visualise />}
-        <ChangeLanguageSwitch />
-      </div>
-      {appMode === 1 ? <RightPanelView /> : <></>}
+      <WriteViewSwitch />
+      {appMode === 0 ? <WriteTextMode /> : <ViewNotesMode />}
+      <ChangeLanguageSwitch />
     </div>
   );
 }
